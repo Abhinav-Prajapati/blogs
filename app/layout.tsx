@@ -27,7 +27,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* Fixed background with effects */}
+        <div className="fixed inset-0 w-full h-screen bg-[#041016] -z-10">
+          {/* Glowing blobs */}
+          <div className="absolute top-[5%] left-[25%] w-[450px] h-[400px] rounded-full bg-[#216389] opacity-50 blur-[8rem]" />
+          <div className="absolute top-[10%] left-[45%] w-[700px] h-[500px] rounded-full bg-[#216389] opacity-50 blur-[8rem]" />
+
+          <div className="absolute bottom-[5%] left-[25%] w-[360px] h-[330px] rounded-full bg-pink-400 opacity-38 blur-[9rem]" />
+          <div className="absolute bottom-[10%] left-[50%] w-[350px] h-[400px] rounded-full bg-pink-400 opacity-38 blur-[9rem]" />
+        </div>
+
+        {/* Header */}
+        <div className="fixed top-0 left-0 w-full backdrop-blur-md border-b border-white/20 z-50">
+          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div className="text-xl font-semibold text-white">
+              blogs.abhii.in
+            </div>
+          </div>
+        </div>
+
+        {/* Main content */}
+        <div className="pt-16">{children}</div>
       </body>
     </html>
   );
