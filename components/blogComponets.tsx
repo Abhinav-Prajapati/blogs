@@ -202,12 +202,15 @@ export const Code: React.FC<CodeProps> = ({
 
 // Table component
 export const Table: React.FC<TableProps> = ({ headers, rows }) => (
-  <div className="overflow-x-auto my-6">
-    <table className="w-full border-collapse">
+  <div className="overflow-x-auto my-6 overflow-hidden rounded-lg shadow-lg border-[1px] border-gray-200">
+    <table className="w-full">
       <thead>
         <tr>
           {headers.map((header, index) => (
-            <th key={index} className="border border-white px-4 py-2 text-left">
+            <th
+              key={index}
+              className="px-4 py-2 text-left border-b border-r  bg-black/15"
+            >
               {header}
             </th>
           ))}
@@ -217,7 +220,10 @@ export const Table: React.FC<TableProps> = ({ headers, rows }) => (
         {rows.map((row, rowIndex) => (
           <tr key={rowIndex}>
             {row.map((cell, cellIndex) => (
-              <td key={cellIndex} className="border border-white px-4 py-2">
+              <td
+                key={cellIndex}
+                className="px-4 py-2 border-r border-white/50"
+              >
                 {cell}
               </td>
             ))}
