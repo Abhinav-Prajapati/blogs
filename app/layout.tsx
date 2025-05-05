@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Search, Sun } from "lucide-react";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,10 +41,50 @@ export default function RootLayout({
 
         {/* Header */}
         <div className="fixed top-0 left-0 w-full backdrop-blur-md border-b border-white/20 z-50">
-          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div className="text-xl font-semibold text-white">
-              blogs.abhii.in
-            </div>
+          <div className="w-1/2 mx-auto px-4 py-4 flex items-center justify-between">
+            <nav className="flex justify-between items-center w-full">
+              <Link href={"/"}>
+                <div className="text-xl font-bold">Abhinav Prajapati</div>
+              </Link>
+              <div className="flex items-center space-x-6">
+                <a
+                  href="#blog"
+                  className="hover:text-yellow-400 transition-colors"
+                >
+                  Blog
+                </a>
+                <a
+                  href="#projects"
+                  className="hover:text-yellow-400 transition-colors"
+                >
+                  Projects
+                </a>
+                <a
+                  href="#uses"
+                  className="hover:text-yellow-400 transition-colors"
+                >
+                  Uses
+                </a>
+                <a
+                  href="#about"
+                  className="hover:text-yellow-400 transition-colors"
+                >
+                  About
+                </a>
+                <button
+                  aria-label="Search"
+                  className="hover:text-yellow-400 transition-colors"
+                >
+                  <Search size={20} />
+                </button>
+                <button
+                  aria-label="Toggle theme"
+                  className="hover:text-yellow-400 transition-colors"
+                >
+                  <Sun size={20} />
+                </button>
+              </div>
+            </nav>
           </div>
         </div>
 
