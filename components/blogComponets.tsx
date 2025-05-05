@@ -89,7 +89,7 @@ interface BlogPostProps {
 export const BlogContainer: React.FC<BlogContainerProps> = ({ children }) => {
   return (
     <div className="min-h-screen text-white">
-      <div className="w-full md:w-4/5 lg:w-3/5 xl:w-[46%] mx-auto py-12 px-4">
+      <div className="w-full md:w-4/5 lg:w-3/5 xl:w-[50%] mx-auto py-12 px-4">
         <article className="prose prose-invert prose-lg max-w-none">
           {children}
         </article>
@@ -102,7 +102,7 @@ export const BlogContainer: React.FC<BlogContainerProps> = ({ children }) => {
 export const BlogHeader: React.FC<BlogHeaderProps> = ({ title, subtitle }) => {
   return (
     <header className="mb-12">
-      <h1 className="text-4xl font-bold mb-4 text-white">{title}</h1>
+      <h1 className="text-4xl font-bold mb-4 text-yellow-500">{title}</h1>
       {subtitle && <p className="text-xl text-gray-300">{subtitle}</p>}
     </header>
   );
@@ -110,17 +110,19 @@ export const BlogHeader: React.FC<BlogHeaderProps> = ({ title, subtitle }) => {
 
 // Heading components for different levels
 export const Heading1: React.FC<HeadingProps> = ({ children }) => (
-  <h1 className="text-4xl font-bold mb-8 text-white">{children}</h1>
+  <h1 className="text-4xl font-bold mb-8 text-yellow-500">{children}</h1>
 );
 
 export const Heading2: React.FC<HeadingProps> = ({ children }) => (
-  <h2 className="text-2xl font-bold mt-10 mb-4 pb-2 border-b-2 border-white w-max">
+  <h2 className="text-2xl font-bold mt-10 mb-4 pb-2 border-b-2 border-yellow-400 text-yellow-400 w-max">
     {children}
   </h2>
 );
 
 export const Heading3: React.FC<HeadingProps> = ({ children }) => (
-  <h3 className="text-xl font-bold mt-10 mb-2 pb-1 w-max">{children}</h3>
+  <h3 className="text-xl font-bold mt-10 mb-2 pb-1 w-max text-yellow-400">
+    {children}
+  </h3>
 );
 
 // Paragraph component
@@ -287,11 +289,11 @@ export const Callout: React.FC<CalloutProps> = ({
 // Tag component
 export const Tag: React.FC<TagProps> = ({ children, color = "blue" }) => {
   const colors = {
-    blue: "bg-blue-900/50 text-blue-200",
-    green: "bg-green-900/50 text-green-200",
-    red: "bg-red-900/50 text-red-200",
-    yellow: "bg-yellow-900/50 text-yellow-200",
-    purple: "bg-purple-900/50 text-purple-200",
+    blue: "bg-blue-900/50 text-blue-200 border border-blue-500",
+    green: "bg-green-900/50 text-green-200 border border-green-500",
+    red: "bg-red-900/50 text-red-200 border border-red-500",
+    yellow: "bg-yellow-900/50 text-yellow-200 border border-yellow-500",
+    purple: "bg-purple-900/50 text-purple-200 border border-purple-500",
   };
 
   return (
