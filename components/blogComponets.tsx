@@ -127,7 +127,7 @@ export const Heading3: React.FC<HeadingProps> = ({ children }) => (
 
 // Paragraph component
 export const Paragraph: React.FC<ParagraphProps> = ({ children }) => (
-  <p className="my-4 text-lg leading-relaxed">{children}</p>
+  <p className="my-4 text-lg leading-6">{children}</p>
 );
 
 export const Code: React.FC<CodeProps> = ({
